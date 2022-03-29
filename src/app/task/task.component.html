@@ -1,0 +1,54 @@
+<div class="content">
+    <h1>My phone book!</h1>
+    <hr>
+    <div class="search">
+        <input type="text" name="" id="" [(ngModel)]="searchField" placeholder="search text goes here">
+        <button (click)="addPhone()" class="add">Add phone</button>
+    </div>
+    <hr>
+    <div class="book">
+        <table>
+            <tr>
+                <th *ngIf="che == 0" (click)="sortElements('fnu', 'first_n')" class="hover">First name</th>
+                <th *ngIf="che == 1" (click)="sortElements('fnu', 'first_n')" class="hover">First name &#9650;</th>
+                <th *ngIf="che == -1" (click)="sortElements('fnd', 'first_n')" class="hover">First name &#9660;</th>
+    
+                <th *ngIf="che1 == 0" (click)="sortElements('lnu', 'last_n')" class="hover">Last name</th>
+                <th *ngIf="che1 == 1" (click)="sortElements('lnu', 'last_n')" class="hover">Last name &#9650;</th>
+                <th *ngIf="che1 == -1" (click)="sortElements('lnd', 'last_n')" class="hover">Last name &#9660;</th>
+    
+                <th *ngIf="che2 == 0" (click)="sortElements('pnu', 'phone_n')" class="hover">Number</th>
+                <th *ngIf="che2 == 1" (click)="sortElements('pnu', 'phone_n')" class="hover">Number &#9650;</th>
+                <th *ngIf="che2 == -1" (click)="sortElements('pnd', 'phone_n')" class="hover">Number &#9660;</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr *ngFor="let item of phoneList | search:searchField | sort:type ; index as i">
+                <td>{{ item.firstName }}</td>
+                <td>{{ item.lastName }}</td>
+                <td>{{ item.phoneNumber }}</td>
+                <td><input type="button" value="Edit" class="edit" (click)="editUser(i)"></td>
+                <td><input type="button" value="Delete" class="delete" (click)="deleteUser(i)"></td>
+            </tr>
+    
+        </table>
+    </div>
+    
+    <div class="popup" *ngIf="showAddPopup || showEditPopup">
+        <div class="popup_block">
+            <div class="popup_top">
+                <h2>Add phone</h2>
+                <span (click)="closePopup()" class="hover">&#x2715;</span>
+            </div>
+            <hr>
+            <div class="popup_bottom">
+                <input type="text" name="" id="" [(ngModel)]="inputFN" placeholder="first name goes here">
+                <input type="text" name="" id="" [(ngModel)]="inputLN" placeholder="last name goes here">
+                <input type="text" name="" id="" [(ngModel)]="inputPN" placeholder="phone number goes here">
+            </div>
+            <hr>
+            <input type="button" value="Save" class="save" (click)="saveBtn()">
+        </div>
+    </div>
+    
+</div>

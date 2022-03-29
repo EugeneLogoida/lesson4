@@ -1,0 +1,111 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.content{
+    padding: 15px 50px;
+}
+.popup{
+    
+    background-color: rgba($color: #000000, $alpha: .7);
+    // opacity: 0.7;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // display: none;
+    &_block{
+        position: relative;
+        // margin: auto;
+        width: 500px;
+        height: 300px;
+        background-color: white;
+        padding: 20px 35px;
+    }
+    &_top{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &_bottom{
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-around;
+        height: 130px;
+    }
+    .save{
+        float: right;
+    }
+}
+
+.hover:hover{
+    cursor: pointer;
+}
+
+.edit{
+    background-color: orange;
+    height: 30px;
+    border-radius: 3px;
+    border: none;
+}
+.delete{
+    background-color: tomato;
+    color:whitesmoke;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+}
+.edit:hover{
+    background-color: rgb(221, 144, 0);
+    cursor: pointer;
+}
+.delete:hover{
+    background-color: rgb(221, 80, 55);
+    cursor: pointer;
+}
+.save{
+    color: white;
+    background-color: rgb(0, 161, 0);
+    border: none;
+    border-radius: 3px;
+    height: 30px;
+}
+.save:hover{
+    background-color: rgb(0, 95, 0);
+    cursor: pointer;
+}
+.add{
+    width: 100px;
+    height: 30px;
+    color: white;
+    background-color: rgb(0, 161, 0);
+    border: none;
+    border-radius: 5px;
+}
+.add:hover{
+    background-color: rgb(8, 94, 0);
+    cursor: pointer;
+}
+
+.search{
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    input{
+        width: 700px;
+    }
+}
+
+table{
+    width: 100%;
+    th{
+        text-align: left;
+    }
+    td{
+        height: 45px;
+    }
+}
